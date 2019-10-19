@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package com.jyf.protobuf;
+
+option optimize_for = SPEED;
+option java_package = "com.jyf.netty.example6";
+option java_outer_classname = "DataInfo";
+
+message Student {
+    required string name = 1;
+    optional int32 age = 2;
+    optional string address = 3;
+}
+

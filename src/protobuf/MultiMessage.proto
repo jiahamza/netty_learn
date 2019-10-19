@@ -1,0 +1,37 @@
+syntax = "proto2";
+
+package com.jyf.protobuf;
+
+option optimize_for = SPEED;
+option java_package = "com.jyf.netty.example7";
+option java_outer_classname = "MultiMessage";
+
+message Who {
+    enum DataType {
+        StudentType = 1;
+        AnimalType = 2;
+        PlantType = 3;
+    }
+    required DataType data_type = 1;
+    oneof dataBody{
+        Student student = 2;
+        Animal animal = 3;
+        Plant plant = 4;
+    }
+}
+
+message Student {
+    optional string name = 1;
+    optional int32 age = 2;
+    optional string address = 3;
+}
+
+message Animal {
+    optional string name = 1;
+    optional int32 age = 2;
+}
+
+message Plant {
+    optional string name = 1;
+    optional int32 age = 2;
+}
